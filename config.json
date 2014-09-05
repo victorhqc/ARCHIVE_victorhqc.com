@@ -1,0 +1,152 @@
+{
+	"modules":{
+		"home":"",
+		"webapps":"",
+		"websites":"",
+		"projects":"",
+		"about":""
+	},
+	"url": "modules/",
+	"main_images": {
+		"1": {
+			"src":"img/main/1.jpg",
+			"title":"title1",
+			"subtitle":"sub1"
+		},
+		"2": {
+			"src":"img/main/2.jpg",
+			"title":"title2",
+			"subtitle":"sub2"
+		},
+		"3": {
+			"src":"img/main/3.jpg",
+			"title":"title3",
+			"subtitle":"sub3"
+		},
+		"4": {
+			"src":"img/main/4.jpg",
+			"title":"title4",
+			"subtitle":"sub4"
+		},
+		"5": {
+			"src":"img/main/5.jpg",
+			"title":"title5",
+			"subtitle":"sub5"
+		},
+		"6": {
+			"src": "img/flickr/9436144812_070bd6cee2_o.jpg",
+			"author": "Mike Krüger",
+			"url": "http://www.flickr.com/photos/memoryleakx/"
+		},
+		"7": {
+			"src": "img/flickr/9223220544_f3be78b7a5_o.jpg",
+			"author": "Dennis van Zuijlekom",
+			"url": "http://www.flickr.com/photos/dvanzuijlekom/"
+		},
+		"8": {
+			"src": "img/flickr/6081377157_14562fca7a_o.jpg",
+			"author": "Tomás Vasconcelo",
+			"url": "http://www.flickr.com/photos/unmoment/"
+		},
+		"9": {
+			"src": "img/flickr/6902260636_14b12901ab_o.jpg",
+			"author": "Vagelis Giannadakis",
+			"url": "http://www.flickr.com/photos/vagelis_giannadakis"
+		},
+		"10": {
+			"src": "img/flickr/7898404806_fb5f3498e3_o.jpg",
+			"author": "Marion Quiroz Castro",
+			"url": "http://www.flickr.com/photos/marionqc"
+		},
+		"11": {
+			"src": "img/flickr/7898420436_b9a376f2bd_o.jpg",
+			"author": "Marion Quiroz Castro",
+			"url": "http://www.flickr.com/photos/marionqc"
+		}
+	},
+	"web_sites": {
+		"1": {
+			"name":"HESA Jurídico",
+			"url":"http://hesajuridico.com",
+			"release_date": "2013-02-01",
+			"features": {
+				"1": "image_gallery",
+				"2": "news_manager",
+				"3": "contact_form",
+				"4": "gmail_emails"
+			},
+			"images": {
+				"1": {
+					"title":"",
+					"src":"img/websites/hesa1.png",
+					"href": ""
+				},
+				"2": {
+					"title":"",
+					"src":"img/websites/hesa2.png",
+					"href": ""
+				},
+				"3": {
+					"title":"",
+					"src":"img/websites/hesa3.png",
+					"href": ""
+				}
+			}
+		},
+		"2": {
+			"name": "Dental Clinic",
+			"url":"http://victor/Paginas/DentalClinic/",
+			"release_date": "2013-08-31",
+			"features": {
+				"1": "image_gallery",
+				"2": "responsive_design",
+				"3": "contact_form",
+				"4": "outlook_emails"
+			},
+			"images": {
+				"1": {
+					"title":"",
+					"src":"img/websites/dental1.png",
+					"href": ""
+				},
+				"2": {
+					"title":"",
+					"src":"img/websites/dental2.png",
+					"href": ""
+				},
+				"3": {
+					"title":"",
+					"src":"img/websites/dental3.png",
+					"href": ""
+				}
+			}
+		}
+	},
+	"about_feaures": {
+		"1": {
+			"title":"f-1",
+			"message":"fm-1",
+			"icon":"ultrabook.png"
+		},
+		"2": {
+			"title":"f-2",
+			"message":"fm-2",
+			"icon":"type.png"
+		},
+		"3": {
+			"title":"f-3",
+			"message":"fm-3",
+			"icon":"news.png"
+		},
+		"4": {
+			"title":"f-4",
+			"message":"fm-4",
+			"icon":"mug.png"
+		},
+		"5": {
+			"title":"f-5",
+			"message":"fm-5",
+			"icon":"gameboy.png"
+		}
+	}
+}

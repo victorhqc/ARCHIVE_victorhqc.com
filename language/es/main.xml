@@ -1,0 +1,40 @@
+<content>
+	<dom>
+		<home>Inicio</home>
+		<webapps>Aplicaciones Web</webapps>
+		<websites>Páginas web</websites>
+		<projects>Proyectos</projects>
+		<about>Acerca de</about>
+	</dom>
+	<daysname>
+		<d-0>Domingo</d-0>
+		<d-1>Lunes</d-1>
+		<d-2>Martes</d-2>
+		<d-3>Miércoles</d-3>
+		<d-4>Jueves</d-4>
+		<d-5>Viernes</d-5>
+		<d-6>Sábado</d-6>
+	</daysname>
+	<monthsname>
+		<m-0>Enero</m-0>
+		<m-1>Febrero</m-1>
+		<m-2>Marzo</m-2>
+		<m-3>Abril</m-3>
+		<m-4>Mayo</m-4>
+		<m-5>Junio</m-5>
+		<m-6>Julio</m-6>
+		<m-7>Agosto</m-7>
+		<m-8>Septiembre</m-8>
+		<m-9>Octubre</m-9>
+		<m-10>Noviembre</m-10>
+		<m-11>Diciembre</m-11>
+	</monthsname>
+	<features>
+		<image_gallery>Galería de imágenes</image_gallery>
+		<news_manager>Administración de noticias</news_manager>
+		<contact_form>Formulario de contacto</contact_form>
+		<responsive_design>Diseño responsivo</responsive_design>
+		<gmail_emails>Correos con Gmail</gmail_emails>
+		<outlook_emails>Correos con Outlook</outlook_emails>
+	</features>
+</content>

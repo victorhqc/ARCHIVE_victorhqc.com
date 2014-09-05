@@ -1,0 +1,60 @@
+<content>
+	<dom>
+		<jum-title>Desarrollador Senior en Backend &amp; Frontend</jum-title>
+		
+		<jum-description-1>Soy un apasionado programador con la inalcanzable misión de lograr el código perfecto. He participado en numerosos proyectos de desarrollo, desde páginas de internet hasta avanzadas aplicaciones web.</jum-description-1>
+		<jum-description-2>Estudié en la Universidad La Salle la Ingeniería en Cibernética </jum-description-2>
+		<jum-desc-help-2> - generación 2006-2011</jum-desc-help-2>
+		<jum-description-2-1> en Chihuahua, Chih. México. Sin embargo mi especialidad está en la programación Web, comencé a hacer sitios web en 2008, con experiencia profesional desde el 2010.</jum-description-2-1>
+
+		<jum-description-3>Soy co fundador de </jum-description-3>
+		<jum-desc-help-3>uVicate</jum-desc-help-3>
+		<jum-description-3-1> una empresa dedicada al desarrollo de software en Internet, desempeñando el papel de director en el área de desarrollo.</jum-description-3-1>
+
+		<technical_knowledge>Conocimiento técnico</technical_knowledge>
+
+		<kn-title-1>Diseño de bases de datos.</kn-title-1>
+		<kn-sub-1> Con MySQL, SQLite.</kn-sub-1>
+		<kb-main-1>Desde realizar el modelo entidad-relación, diseñar el modelo relacional, escribir el código de sintáxis para crearla, cumpliendo con las reglas de normalización claro está. Hasta realizar consultas, funciones almacenadas, etc. y código avanzado de SQL.</kb-main-1>
+
+		<kn-title-2>Programación Server side </kn-title-2>
+		<kn-sub-2>Utilizando PHP</kn-sub-2>
+		<kb-main-2>Tengo experiencia con la programación orientada a objetos en este lenguaje. He realizado una gran cantidad de librerías y API's en diferentes proyectos y sistemas.</kb-main-2>
+
+		<kn-title-3>Programación Client side </kn-title-3>
+		<kn-sub-3>Utilizando JavaScript, HTML y CSS</kn-sub-3>
+		<kn-main-3>Utilizando los patrones de diseño más modernos y "Prototype-Programming" dando el máximo rendimiento en los desarrollos. Además de tener experiencia con las tecnologías de HTML5 como IndexedDB y Web Sockets. Integración de servicios de terceros como Google, Dropbox, Facebook, etc.</kn-main-3>
+
+		<kn-title-4>Códigos elegantes</kn-title-4>
+		<kn-sub-4> y abiertos</kn-sub-4>
+		<kn-main-4>El código debe ser fácil de leer, mantener y expander. He desarrollado algunas APIs que se utilizán por diferentes desarrolladores en el mundo, ¡Revisa mis repositorios de código abierto en </kn-main-4>
+		<kn-main-4-1>Github</kn-main-4-1>
+		<kn-main-4-2>! Si eres un programador como yo, me gustaría conocer tu trabajo también.</kn-main-4-2>
+
+		<kn-title-5>Mi no tan especialidad </kn-title-5>
+		<kn-sub-5>Programación con Python</kn-sub-5>
+		<kn-main-5>En el 2012 Escribí una aplicación híbrida escrita en Python y tecnologías Web. Para Linux, específicamente para la distribución de Ubuntu. Y aunque nunca la publiqué, me inspiró para realizar el API "WebApp" y mi proyecto "ExpMan".</kn-main-5>
+
+		<contact-me>Contáctame</contact-me>
+		<contact-phone>Teléfono</contact-phone>
+		<contact-email>Correo electrónico</contact-email>
+		<about-social>Redes sociales</about-social>
+		<about-location>Ubicación</about-location>
+
+		<curiosities>Datos curiosos</curiosities>
+		<f-1>8 Horas de programación</f-1>
+		<fm-1>Diarias</fm-1>
+
+		<f-2>+10,000 Líneas de código</f-2>
+		<fm-2>Mensuales</fm-2>
+
+		<f-3>2 Horas leyendo</f-3>
+		<fm-3>Por día</fm-3>
+
+		<f-4>10 tazas de café</f-4>
+		<fm-4>Por semana</fm-4>
+
+		<f-5>6 Horas jugando RO (Y ahora LOL)</f-5>
+		<fm-5>Por fin de semana</fm-5>
+	</dom>
+</content>
