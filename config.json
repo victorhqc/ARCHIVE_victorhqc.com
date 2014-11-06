@@ -1,9 +1,6 @@
 {
 	"modules":{
 		"home":"",
-		"webapps":"",
-		"websites":"",
-		"projects":"",
 		"about":""
 	},
 	"url": "modules/",
