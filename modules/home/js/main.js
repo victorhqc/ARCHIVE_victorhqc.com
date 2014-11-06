@@ -39,7 +39,7 @@
 	};
 
 	Module.prototype.translateHelper = function() {
-		var phone = this.a.current.language.getText('phone');
+		var phone = this.a.current.getText('phone');
 		var phonedom = document.getElementById('phone');
 		phonedom.title = phone;
 	};
@@ -54,7 +54,7 @@
 		var margin = $(features).css('margin-top');
 
 		$('.fake-img').css({'height': margin, 'top': '-'+margin});
-		
+
 		this.headerHeight = document.getElementById('header').clientHeight;
 	};
 
@@ -146,7 +146,7 @@
 		var winscroll = $(window).scrollTop();
 		var relativeTop = winscroll + this.headerHeight;
 		for(var i = 0, len = this.fakeImages.length; i < len; i++){
-			
+
 			var fake = this.fakeImages[i];
 			var parent = fake.parentNode;
 			var fakeheight = $(fake).outerHeight();
@@ -165,7 +165,7 @@
 			}else{
 				invisibles.push(fake);
 			}
-			
+
 		}
 
 
@@ -186,7 +186,7 @@
 
 	Module.prototype.updateElements = function() {
 		var imgs = this.visibleImgs();
-		
+
 		for(var i = 0, len = imgs.invisibles.length; i < len; i++){
 			var aux = imgs.invisibles[i];
 			var data = aux.getAttribute('data-img');
@@ -206,14 +206,14 @@
 
 			var relScroll = this.lastScrollY;
 			var gen = aux._scroll;
-			
+
 			var imgH = img.offsetHeight;
 			var op = Math.round(-1 * gen * 0.8 - (imgH * 0.05));
 			var op2 = Math.round( -1 * gen * 0.7 - (imgH * 0.05));
 
 			prefix(img.style, "Transform", "translate3d(0," + op2 + "px, 0)");
 		}
-		
+
 		this.ticking = false;
 
 	}

@@ -26,13 +26,13 @@
 	 * Build the DOM of the features thumbnails
 	 * @param  {Json} features Sites info
 	 * @return {undefined}       No response
-	 */	
+	 */
 	Module.prototype.buildGrid = function(features) {
 		//The row will hold:
 		// * 4 websites in large screens
 		// * 3 websites in medium screens
 		// * 1 website in small and extra small screens
-		
+
 		var aux = 1;
 		for(var s in features){
 			if(features.hasOwnProperty(s)){
@@ -96,14 +96,14 @@
 
 		var title = document.createElement('h4');
 		title.setAttribute('data-ltag', feature.title);
-		var textTitle = this.a.current.language.getText(feature.title);
+		var textTitle = this.a.current.getText(feature.title);
 		title.appendChild(document.createTextNode(textTitle));
 		info.appendChild(title);
 
 		var message = document.createElement('p');
 		message.setAttribute('data-ltag', feature.message);
-		var textTitle = this.a.current.language.getText(feature.message);
-		message.appendChild(document.createTextNode(textTitle));
+		var textTitle2 = this.a.current.getText(feature.message);
+		message.appendChild(document.createTextNode(textTitle2));
 		info.appendChild(message);
 
 		return main;
@@ -185,7 +185,7 @@
 
 	Module.prototype.updateElements = function() {
 		var imgs = this.visibleImgs();
-		
+
 		for(var i = 0, len = imgs.invisibles.length; i < len; i++){
 			var aux = imgs.invisibles[i];
 			var img = aux.getElementsByTagName('img')[0];
@@ -201,13 +201,13 @@
 			img.style.visibility =  'visible';
 
 			var relScroll = aux._lower;
-			
+
 			var imgH = aux.offsetHeight;
 			var op2 = -100 + Math.round( -1 * relScroll * 0.15 - (imgH * 0.05));
 
 			prefix(img.style, "Transform", "translate3d(0," + op2 + "px, 0)");
 		}
-		
+
 		this.ticking = false;
 
 	}
