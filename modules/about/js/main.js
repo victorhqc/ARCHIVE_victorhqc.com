@@ -193,7 +193,7 @@
             prefix(img.style, 'Transform', '');
         }
 
-        for(var j = 0, len2 = imgs.visibles.length; j < len2; i++){
+        for(var j = 0, len2 = imgs.visibles.length; j < len2; j++){
             var aux2 = imgs.visibles[j];
             var img2 = aux2.getElementsByTagName('img')[0];
 
