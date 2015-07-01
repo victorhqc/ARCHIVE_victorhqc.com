@@ -3,12 +3,20 @@ angular.module('translations', ['pascalprecht.translate']);
 angular.module('translations').config(function($translateProvider) {
 
     var lang = navigator.language || navigator.userLanguage;
-    console.log('lang', lang);
+    var lang_fixed = lang.match(/([a-z]+)/gi)[0];
     MessageFormat.locale["es_MX"] = function () {};
     MessageFormat.locale["en_US"] = function () {};
 
     $translateProvider.useMessageFormatInterpolation();
-    $translateProvider.preferredLanguage('es_MX');
+    switch(lang_fixed) {
+        default:
+        case 'en':
+        $translateProvider.preferredLanguage('en_US');
+        break;
+        case 'es':
+        $translateProvider.preferredLanguage('es_MX');
+        break;
+    }
     $translateProvider.translations('es_MX', {
         home: 'Inicio',
         about: 'Acerca de',
