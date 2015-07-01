@@ -1,0 +1,139 @@
+@import "bower_components/bootstrap/less/bootstrap.less";
+//@import "bower_components/bootstrap/less/theme.less";
+@import "bower_components/font-awesome/less/font-awesome.less";
+@fa-font-path: "bower_components/font-awesome/fonts";
+
+body, html {
+    height: 100%;
+}
+
+body {
+    min-width: 400px;
+}
+
+#content {
+    min-height: 100%;
+    padding-top: 50px;
+}
+
+#main-menu>li {
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+
+    transition: all 450ms ease-in-out;
+    -moz-transition: all 450ms ease-in-out;
+    -webkit-transition: all 450ms ease-in-out;
+    -o-transition: all 450ms ease-in-out;
+    -ms-transition: all 450ms ease-in-out;
+}
+
+#main-menu>li:hover {
+    border-bottom: 2px solid #428bca;
+}
+
+#main-menu>li.active {
+    border-bottom: 2px solid #428bca;
+}
+
+.feature-about {
+    margin-bottom: 30px;
+}
+
+.row {
+    margin: 0;
+}
+
+.img-container {
+    text-align: center;
+}
+
+.img-container img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#flask {
+    margin-top: 40px;
+}
+
+.knowledge-separator {
+    width: 80%;
+    margin: 50px 10% 50px 10%;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.kn-image {
+    width: 600px;
+    height: 600px;
+}
+
+.kn-info {
+    margin-top: 100px;
+}
+
+.img-parallax {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.img-cover {
+    position: absolute;
+    background-image: url('../img/circle.png');
+    width: 400px;
+    height: 400px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 992px), (max-width: 768px) {
+    .kn-info {
+        margin-top: 0px;
+    }
+
+    .img-cover {
+        width: 300px;
+        height: 300px;
+        background-image: url('../img/circle_300.png');
+    }
+
+    .img-parallax {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+#footer {
+    padding-top: 50px;
+    background-color: #eaeaea;
+}
+
+.footer-feature {
+    margin-bottom: 30px;
+}
+
+/* Component LESS */
+@import "directive/menu/menu.less";
+@import "partial/home/home.less";
+@import "partial/about/about.less";
+@import "translations/translations.less";
+/* Add Component LESS Above */
+
+/* Required for Angular UI Bootstrap */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+/* Personal preference for BS modal.  The LESS below makes the backdrop white and
+   causes the modal to fade in rather than slide in. */
+//@modal-backdrop-bg: white;
+//.modal {
+//	&.fade {
+//		.transition(opacity .3s);
+//	}
+//	&.fade .modal-dialog {
+//		.translate(0,0);
+//	}
+//}

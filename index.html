@@ -1,81 +1,87 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="description" content="My Personal Website">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Victor Q | WebApps & Webpages</title>
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="author" href="humans.txt">
+<!DOCTYPE html>
+<html ng-app="victorhqc">
+<head>
+  <title>Victor Q | WebApps & Webpages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+  <link href="app.less" type="text/css" rel="stylesheet/less">
+</head>
+<body>
 
-		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-		<link rel="stylesheet" type="text/css" href="bower_components/yetAnotherGallery/gallery.class.css"/>
+  <!-- Livereload script for development only (stripped during dist build) -->
+  <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
 
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- JS from Bower Components -->
+  <script src="bower_components/less.js/dist/less-1.6.2.js" data-concat="false"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+  <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+  <script src="bower_components/messageformat/messageformat.js"></script>
+  <script src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.min.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular-moment/angular-moment.js"></script>
+  <script src="bower_components/Chart.js/Chart.min.js"></script>
+  <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+  <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+  <script src="bower_components/angular-chosen-localytics/chosen.js"></script>
+  <!-- Add New Bower Component JS Above -->
 
-		<!-- Hello developer
-		This site was built with the WebApp Library: https://github.com/uvicate/WebApp/
-		If you have a question about this site or the function of it, publish an issue in the WebApp github page, I'll be glad to help you.
 
-		If you like the library, fork it, publish it and share it! :]
-		-->
-	</head>
-	<body>
-		<header id="header" class="navbar navbar-default navbar-fixed-top">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="">Victorhqc</a>
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu-container">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-		</div>
-		<div id="main-menu-container" class="collapse navbar-collapse navbar-ex6-collapse">
-			<ul id="main-menu" class="nav navbar-nav"></ul>
-		</div>
+  <!-- Main App JS -->
+  <script src="app.js"></script>
+  <script src="directive/menu/menu.js"></script>
+  <script src="partial/home/home.js"></script>
+  <script src="partial/about/about.js"></script>
+  <script src="service/resources.js"></script>
+  <script src="service/authInterceptor.js"></script>
+  <script src="translations/translations.js"></script>
+  <!-- Add New Component JS Above -->
+  <menu></menu>
+  <div>
+    <div id="content">
+        <div ng-view>
+        </div>
+    </div>
+  </div>
+  <footer id="footer">
+      <div class="row">
+          <div class="footer-feature col-sm-6 col-md-4 col-lg-4">
+              <h3><a href="">Victorhqc</a></h3>
+          </div>
+          <div class="footer-feature col-sm-6 col-md-4 col-lg-4">
+              <p>
+                  <span>{{'legal' | translate}}</span>
+                  <a href="#/legal">{{'legal_2' | translate}}</a>
+              </p>
+              <p>
+                  <span>{{'legal_3' | translate}}</span>
+                  <a href="http://github.com" target="_blank">{{'legal_4' | translate}}</a>
+                  <span>{{'legal_5' | translate}}</span>
+                  <a href="http://www.w3.org/html/logo/" target="_blank">{{'legal_6' | translate}}</a>
+              </p>
+          </div>
 
-		</header>
-		<div id="container"></div>
+          <div class="footer-feature col-sm-6 col-md-4 col-lg-4">
+              <p>
+                  <a href="http://github.com/victorhqc" target="_blank">Github</a>
+              </p>
+              <p>
+                  <a href="http://facebook.com/victorhqc" target="_blank">Facebook</a>
+              </p>
+              <p>
+                  <a href="https://plus.google.com/111645890272031130235" target="_blank">Google +</a>
+              </p>
+          </div>
+      </div>
+  </footer>
 
-		<footer id="footer">
-			<div class="row">
-				<div class="footer-feature col-sm-6 col-md-4 col-lg-4">
-					<h3><a href="">Victorhqc</a></h3>
-				</div>
-				<div class="footer-feature col-sm-6 col-md-4 col-lg-4">
-					<p>
-						<span data-ltag="legal"></span>
-						<a href="#/legal" data-ltag="legal-2"></a>
-					</p>
-					<p>
-						<span data-ltag="legal-3"></span>
-						<a href="http://github.com" target="_blank" data-ltag="legal-4"></a>
-						<span data-ltag="legal-5"></span>
-						<a href="http://www.w3.org/html/logo/" target="_blank" data-ltag="legal-6"></a>
-					</p>
-				</div>
-
-				<div class="footer-feature col-sm-6 col-md-4 col-lg-4">
-					<p>
-						<a href="http://github.com/victorhqc" target="_blank">Github</a>
-					</p>
-					<p>
-						<a href="http://facebook.com/victorhqc" target="_blank">Facebook</a>
-					</p>
-					<p>
-						<a href="https://plus.google.com/111645890272031130235" target="_blank">Google +</a>
-					</p>
-				</div>
-			</div>
-		</footer>
-		<script src="bower_components/webapp/App.class.js"></script>
-		<script src="lib/md5.js"></script>
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="bower_components/yetAnotherGallery/gallery.class.js"></script>
-		<script src="lib/rsh.js"></script>
-		<script src="lib/json2005.js"></script>
-
-		<script src="js/main.js"></script>
-	</body>
+</body>
 </html>
