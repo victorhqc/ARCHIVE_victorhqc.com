@@ -2,12 +2,16 @@ angular.module('translations', ['pascalprecht.translate']);
 
 angular.module('translations').config(function($translateProvider) {
 
+    var lang = navigator.language || navigator.userLanguage;
+    console.log('lang', lang);
     MessageFormat.locale["es_MX"] = function () {};
     MessageFormat.locale["en_US"] = function () {};
 
     $translateProvider.useMessageFormatInterpolation();
     $translateProvider.preferredLanguage('es_MX');
     $translateProvider.translations('es_MX', {
+        home: 'Inicio',
+        about: 'Acerca de',
         title1: "Hola",
         sub1: "Mi nombre es Víctor Hugo Quiroz Castro",
         main1: "Soy un desarrollador de aplicaciones web con amplia experiencia. Construyo desarrollos geniales para la Web utilizando las tecnologías más actuales. ¿Necesitas un sitio o servicio en Internet? Seamos colaboradores.",
