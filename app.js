@@ -22,4 +22,8 @@ angular.module('victorhqc').run(function($rootScope) {
         }
     };
 
+
+    $rootScope.$on('$routeChangeSuccess', function () {
+        $(window).scrollTop(0);
+    });
 });
