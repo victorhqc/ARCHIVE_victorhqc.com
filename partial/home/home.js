@@ -235,11 +235,6 @@ angular.module('victorhqc').controller('HomeCtrl',function($scope, supportsSVG, 
             "url": "http://www.flickr.com/photos/dvanzuijlekom/"
         },
         {
-            "src": "img/flickr/6081377157_14562fca7a_o.jpg",
-            "author": "Tomás Vasconcelo",
-            "url": "http://www.flickr.com/photos/unmoment/"
-        },
-        {
             "src": "img/flickr/6902260636_14b12901ab_o.jpg",
             "author": "Vagelis Giannadakis",
             "url": "http://www.flickr.com/photos/vagelis_giannadakis"
