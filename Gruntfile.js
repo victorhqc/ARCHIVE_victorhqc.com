@@ -96,31 +96,11 @@ module.exports = function (grunt) {
           {src: ['img/**'], dest: 'dist/'},
           {src: ['bower_components/font-awesome/fonts/**'], dest: 'dist/',filter:'isFile',expand:true},
           {src: ['bower_components/font-awesome/less/**'], dest: 'dist/',filter:'isFile',expand:true},
-          {src: ['bower_components/bootstrap/less/**'], dest: 'dist/',filter:'isFile',expand:true},
+          {src: ['bower_components/bootstrap/less/**'], dest: 'dist/',filter:'isFile',expand:true}
           //{src: ['bower_components/angular-ui-utils/ui-utils-ieshiv.min.js'], dest: 'dist/'},
           //{src: ['bower_components/select2/*.png','bower_components/select2/*.gif'], dest:'dist/css/',flatten:true,expand:true},
           //{src: ['bower_components/angular-mocks/angular-mocks.js'], dest: 'dist/'},
           //<script src="bower_components/less.js/dist/less-1.6.2.js" data-concat="false"></script>
-          {src: 'bower_components/jquery/dist/jquery.min.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/bootstrap/dist/js/bootstrap.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/underscore/underscore.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/moment/moment.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular/angular.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular-route/angular-route.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular-animate/angular-animate.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular-resource/angular-resource.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular-bootstrap/ui-bootstrap-tpls.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular-ui-utils/ui-utils.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular-translate/angular-translate.min.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/messageformat/messageformat.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.min.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/moment/moment.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular-moment/angular-moment.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/Chart.js/Chart.min.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular-chart.js/dist/angular-chart.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular-loading-bar/build/loading-bar.min.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/angular-chosen-localytics/chosen.js', dest: 'dist/', filter: 'isFile', expand: true},
-          {src: 'bower_components/js-md5/js/md5.min.js', dest: 'dist/', filter: 'isFile', expand: true}
         ]
       }
     },
