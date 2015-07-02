@@ -39,14 +39,14 @@ angular.module('victorhqc').controller('HomeCtrl',function($scope, supportsSVG, 
     * @return {Json} newObj Json containing new "order" of the img obj
     */
     $scope.scrambleImages = function(Jimg) {
-        var len = Object.keys(Jimg).length;
-        var newObj = {};
+        var len = Jimg.length;
+        var newObj = [];
         var added = {};
 
         var aux = true;
         var i = 0;
         while(aux === true){
-            var random = Math.floor((Math.random()*len)+1);
+            var random = Math.floor((Math.random()*len));
             if(added[random] === undefined){
                 added[random] = Jimg[random];
                 newObj[i] = Jimg[random];
@@ -77,29 +77,27 @@ angular.module('victorhqc').controller('HomeCtrl',function($scope, supportsSVG, 
         $scope.fakeImages = fakeImages;
 
         var amount = fakeImages.length;
-        for(var k in Jimg){
-            if(Jimg.hasOwnProperty(k)){
-                if(fakeImages[aux]){
-                    fakeImages[aux].id = 'fake-img-' + k;
-                    fakeImages[aux].setAttribute('data-img', k);
+        for(var k = 0; k < Jimg.length; k++){
+            if(fakeImages[aux]){
+                fakeImages[aux].id = 'fake-img-' + k;
+                fakeImages[aux].setAttribute('data-img', k);
 
-                    var div = document.createElement('div');
-                    div.className = 'fixed-img';
-                    div.id = 'fixed-img-' + k;
-                    $(div).css('z-index', amount);
+                var div = document.createElement('div');
+                div.className = 'fixed-img';
+                div.id = 'fixed-img-' + k;
+                $(div).css('z-index', amount);
 
-                    var img = document.createElement('img');
-                    img.src = Jimg[k].src;
-                    div.appendChild(img);
+                var img = document.createElement('img');
+                img.src = Jimg[k].src;
+                div.appendChild(img);
 
-                    $scope.imgContainer.appendChild(div);
-                    $scope.imgs = img;
+                $scope.imgContainer.appendChild(div);
+                $scope.imgs = img;
 
-                    aux ++;
-                    amount --;
-                }else{
-                    break;
-                }
+                aux ++;
+                amount --;
+            }else{
+                break;
             }
         }
     };
@@ -205,63 +203,53 @@ angular.module('victorhqc').controller('HomeCtrl',function($scope, supportsSVG, 
     $scope.imgContainer = document.getElementById('fix-image-container');
     $scope.imgs = [];
 
-    $scope.images = {
-        "1": {
+    $scope.images = [
+        {
             "src":"img/main/1.jpg",
             "title":"title1",
             "subtitle":"sub1"
         },
-        "2": {
+        {
             "src":"img/main/2.jpg",
             "title":"title2",
             "subtitle":"sub2"
         },
-        "3": {
+        {
             "src":"img/main/3.jpg",
             "title":"title3",
             "subtitle":"sub3"
         },
-        "4": {
+        {
             "src":"img/main/4.jpg",
             "title":"title4",
             "subtitle":"sub4"
         },
-        "5": {
+        {
             "src":"img/main/5.jpg",
             "title":"title5",
             "subtitle":"sub5"
         },
-        "6": {
-            "src": "img/flickr/9436144812_070bd6cee2_o.jpg",
-            "author": "Mike Krüger",
-            "url": "http://www.flickr.com/photos/memoryleakx/"
-        },
-        "7": {
+        {
             "src": "img/flickr/9223220544_f3be78b7a5_o.jpg",
             "author": "Dennis van Zuijlekom",
             "url": "http://www.flickr.com/photos/dvanzuijlekom/"
         },
-        "8": {
+        {
             "src": "img/flickr/6081377157_14562fca7a_o.jpg",
             "author": "Tomás Vasconcelo",
             "url": "http://www.flickr.com/photos/unmoment/"
         },
-        "9": {
+        {
             "src": "img/flickr/6902260636_14b12901ab_o.jpg",
             "author": "Vagelis Giannadakis",
             "url": "http://www.flickr.com/photos/vagelis_giannadakis"
         },
-        "10": {
-            "src": "img/flickr/7898404806_fb5f3498e3_o.jpg",
-            "author": "Marion Quiroz Castro",
-            "url": "http://www.flickr.com/photos/marionqc"
-        },
-        "11": {
+        {
             "src": "img/flickr/7898420436_b9a376f2bd_o.jpg",
             "author": "Marion Quiroz Castro",
             "url": "http://www.flickr.com/photos/marionqc"
         }
-    };
+    ];
 
     $timeout(function(){
         $scope.buildImages($scope.images);
