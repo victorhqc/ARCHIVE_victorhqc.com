@@ -23,6 +23,7 @@ angular.module('translations').config(function($translateProvider) {
     $translateProvider.translations('es_MX', {
         home: 'Inicio',
         about: 'Acerca de',
+        projects: 'Proyectos',
         title1: "Hola",
         sub1: "Mi nombre es Víctor Hugo Quiroz Castro",
         main1: "Soy un desarrollador de aplicaciones web con amplia experiencia. Construyo desarrollos geniales para la Web utilizando las tecnologías más actuales. ¿Necesitas un sitio o servicio en Internet? Seamos colaboradores.",
@@ -86,6 +87,7 @@ angular.module('translations').config(function($translateProvider) {
     $translateProvider.translations('en_US', {
         home: 'Home',
         about: 'About',
+        projects: 'Projects',
         title1: "Hello",
         sub1: "My name is Víctor Hugo Quiroz Castro",
         main1: "I'm a Web application developer with wide experience. I build great apps for the web using the newest technologies. Need a webservice or website? I would like to collaborate with you.",

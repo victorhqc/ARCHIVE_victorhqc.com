@@ -94,6 +94,7 @@ module.exports = function (grunt) {
       main: {
         files: [
           {src: ['img/**'], dest: 'dist/'},
+          {src: ['extras/**'], dest: 'dist/'},
           {src: ['bower_components/font-awesome/fonts/**'], dest: 'dist/',filter:'isFile',expand:true},
           {src: ['bower_components/font-awesome/less/**'], dest: 'dist/',filter:'isFile',expand:true},
           {src: ['bower_components/bootstrap/less/**'], dest: 'dist/',filter:'isFile',expand:true}

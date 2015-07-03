@@ -17,6 +17,7 @@ angular.module('victorhqc').directive('menu', function($route, $translate, $time
 
             scope.categories = [
                 {name: 'home'},
+                {name: 'projects'},
                 {name: 'about'}
             ];
 

@@ -4,6 +4,7 @@ angular.module('victorhqc').config(function($routeProvider) {
 
     $routeProvider.when('/home',{templateUrl: 'partial/home/home.html'});
     $routeProvider.when('/about',{templateUrl: 'partial/about/about.html'});
+    $routeProvider.when('/projects',{templateUrl: 'partial/projects/projects.html'});
     /* Add New Routes Above */
     $routeProvider.otherwise({redirectTo:'/home'});
 
