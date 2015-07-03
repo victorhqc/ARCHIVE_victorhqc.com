@@ -1,4 +1,4 @@
-angular.module('victorhqc').controller('AboutCtrl',function($scope, supportsSVG, $timeout, pararallaxImages){
+angular.module('victorhqc').controller('AboutCtrl',function($scope, $timeout, pararallaxImages){
 
     function getGravatarImg(email, size) {
         var hash = md5(email);
