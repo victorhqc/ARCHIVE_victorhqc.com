@@ -61,14 +61,14 @@
               <h3><a href="">Victorhqc</a></h3>
           </div>
           <div class="footer-feature col-sm-4 col-md-4 col-lg-4">
-              <p>
-                  <span>{{'legal' | translate}}</span>
-                  <a href="#/legal">{{'legal_2' | translate}}</a>
+              <p ng-cloak>
+                  <span ng-cloak>{{'legal' | translate}}</span>
+                  <a href="#/legal" ng-cloak>{{'legal_2' | translate}}</a>
               </p>
-              <p>
-                  <span>{{'legal_3' | translate}}</span>
+              <p ng-cloak>
+                  <span ng-cloak>{{'legal_3' | translate}}</span>
                   <a href="http://github.com" target="_blank">Github</a>
-                  <span>{{'legal_5' | translate}}</span>
+                  <span ng-cloak>{{'legal_5' | translate}}</span>
                   <a href="http://www.w3.org/html/logo/" target="_blank">W3C</a>
               </p>
           </div>
@@ -86,7 +86,7 @@
           </div>
 
           <div class="footer-feature col-sm-4 col-md-4 col-lg-4" ng-controller="Languages">
-            <h4>{{'language' | translate}}</h4>
+            <h4 ng-cloak>{{'language' | translate}}</h4>
             <p><a ng-click="translate('en');">English</a></p>
             <p><a ng-click="translate('es');">Español</a></p>
           </div>
