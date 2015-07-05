@@ -13,6 +13,57 @@ angular.module('victorhqc').controller('AboutCtrl',function($scope, $timeout, pa
         img.src = src;
     }
 
+    $scope.technical_skills = [
+        {
+            title: 'skill_mysql',
+            subtitle: 'skill_mysql_subtitle',
+            messages: ['skill_mysql_message'],
+            features: [],
+            image: 'img/screens/mysql.jpg'
+        },
+        {
+            title: 'skill_backend',
+            subtitle: 'skill_backend_subtitle',
+            messages: ['skill_backend_message'],
+            features: ['restful', 'websockets', 'laravel', 'skill_backend_oauth2'],
+            image: 'img/screens/php-sublime.jpg'
+        },
+        {
+            title: 'skill_frontend',
+            subtitle: 'skill_frontend_subtitle',
+            messages: ['skill_frontend_message'],
+            features: ['angularjs', 'grunt', 'html5'],
+            image: 'img/screens/js-sublime.jpg'
+        },
+        {
+            title: 'skill_github',
+            subtitle: 'skill_github_subtitle',
+            messages: ['skill_github_message'],
+            features: [],
+            links: [
+                {
+                    url: 'http://hithub.com/victorhqc',
+                    message: 'my_repositories'
+                }
+            ],
+            image: 'img/icons/Octocats/Octocat/Octocat_600.jpg'
+        },
+        {
+            title: 'skill_linux',
+            subtitle: 'skill_linux_subtitle',
+            messages: ['skill_linux_message'],
+            features: [],
+            image: 'img/screens/linux.jpg'
+        },
+        {
+            title: 'skill_noskill',
+            subtitle: 'skill_noskill_subtitle',
+            messages: ['skill_noskill_message'],
+            features: [],
+            image: 'img/screens/gastos.jpg'
+        }
+    ];
+
     $scope.features = [
         {
             "title":"feature_1",

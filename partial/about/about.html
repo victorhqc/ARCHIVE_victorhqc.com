@@ -28,125 +28,41 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-sm-3 col-md-3 col-lg-2">
-            <img id="flask" class="img-responsive col-sm-6" src="img/icons/flask.svg">
-        </div>
-        <div class="page-header col-sm-9 col-md-9 col-lg-10">
-            <h1>{{'technical_knowledge' | translate}}</h1>
-        </div>
-    </div>
-
-    <div classs="row">
-        <div class="col-sm-7 col-md-7 col-lg-7">
-            <div class="kn-info">
-                <h2>
-                    <span>{{'kn_title_1' | translate}}</span>
-                    <span class="text-muted">{{'kn_sub_1' | translate}}</span>
-                </h2>
-                <p class="lead">{{'kb_main_1' | translate}}</p>
-            </div>
-        </div>
-        <div class="col-sm-5 col-md-5 col-lg-5">
+    <div classs="row" ng-repeat="skill in technical_skills">
+        <div class="col-sm-5 col-md-5 col-lg-5" ng-if="$index%2 !== 0">
             <div class="img-parallax">
                 <div class="img-cover"></div>
-                <img class="kn-image" src="img/screens/mysql.jpg">
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="knowledge-separator"></div>
-
-    <div classs="row">
-        <div class="col-sm-5 col-md-5 col-lg-5">
-            <div class="img-parallax">
-                <div class="img-cover"></div>
-                <img class="kn-image" src="img/screens/php-sublime.jpg">
+                <img class="pr-image" src="{{skill.image}}">
             </div>
         </div>
         <div class="col-sm-7 col-md-7 col-lg-7">
-            <div class="kn-info">
+            <div class="pr-info">
                 <h2>
-                    <span>{{'kn_title_2' | translate}}</span>
-                    <span class="text-muted">{{'kn_sub_2' | translate}}</span>
+                    <span>{{skill.title | translate}}</span>
+                    <span class="text-muted">{{skill.subtitle | translate}}</span>
                 </h2>
-                <p class="lead">{{'kb_main_2' | translate}}</p>
+                <p class="lead" ng-repeat="message in skill.messages">{{message | translate}}</p>
+                <div class="lead" ng-repeat="link in skill.links">
+                    <a target="_blank" href="{{link.url}}">
+                        {{link.message | translate}}
+                    </a>
+                </div>
+                <ul ng-if="skill.features.length > 0" class="lead">
+                    <li ng-repeat="feature in skill.features">
+                        {{feature | translate}}
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="knowledge-separator"></div>
-
-    <div classs="row">
-        <div class="col-sm-7 col-md-7 col-lg-7">
-            <div class="kn-info">
-                <h2>
-                    <span>{{'kn_title_3' | translate}}</span>
-                    <span class="text-muted">{{'kn_sub_3' | translate}}</span>
-                </h2>
-                <p class="lead">{{'kn_main_3' | translate}}</p>
-            </div>
-        </div>
-        <div class="col-sm-5 col-md-5 col-lg-5">
+        <div class="col-sm-5 col-md-5 col-lg-5" ng-if="$index%2 === 0">
             <div class="img-parallax">
                 <div class="img-cover"></div>
-                <img class="kn-image" src="img/screens/js-sublime.jpg">
+                <img class="pr-image" src="{{skill.image}}">
             </div>
         </div>
         <div class="clearfix"></div>
+        <div class="knowledge-separator"></div>
     </div>
-
-    <div class="knowledge-separator"></div>
-
-    <div classs="row">
-        <div class="col-sm-5 col-md-5 col-lg-5">
-            <div class="img-parallax">
-                <div class="img-cover"></div>
-                <a href="http://github.com" target="_blank">
-                    <img class="kn-image" src="img/icons/Octocats/Octocat/Octocat_600.jpg">
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-7 col-md-7 col-lg-7">
-            <div class="kn-info">
-                <h2>
-                    <span>{{'kn_title_4' | translate}}</span>
-                    <span class="text-muted">{{'kn_sub_4' | translate}}</span>
-                </h2>
-                <p class="lead">
-                    <span data-ltag="kn-main-4"></span>
-                    <a href="http://github.com/victorhqc" target="_blank">{{'kn_main_4_1' | translate}}</a>
-                    <span>{{'kn_main_4_2' | translate}}</span>
-                </p>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="knowledge-separator"></div>
-
-    <div classs="row">
-        <div class="col-sm-7 col-md-7 col-lg-7">
-            <div class="kn-info">
-                <h2>
-                    <span>{{'kn_title_5' | translate}}</span>
-                    <span class="text-muted">{{'kn_sub_5' | translate}}</span>
-                </h2>
-                <p class="lead">{{'kn_main_5' | translate}}</p>
-            </div>
-        </div>
-        <div class="col-sm-5 col-md-5 col-lg-5">
-            <div class="img-parallax">
-                <div class="img-cover"></div>
-                <img class="kn-image" src="img/screens/gastos.jpg">
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="knowledge-separator"></div>
 
     <div id="contact-me">
         <div class="row">
@@ -158,13 +74,6 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <h3>
-                    <icon class="fa fa-mobile"></icon>
-                    <span> {{'contact_phone' | translate}}</span>
-                </h3>
-                <a href="">+52 1 614 252 8371</a>
-            </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <h3>
                     <icon class="fa fa-inbox"></icon>
