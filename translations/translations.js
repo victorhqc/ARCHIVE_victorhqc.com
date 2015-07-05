@@ -2,25 +2,21 @@ angular.module('translations', ['pascalprecht.translate']);
 
 angular.module('translations').config(function($translateProvider) {
 
-    var lang = navigator.language || navigator.userLanguage;
-    var lang_fixed = lang.match(/([a-z]+)/gi)[0];
-    MessageFormat.locale["es_MX"] = function () {};
-    MessageFormat.locale["en_US"] = function () {};
-
     $translateProvider.useMessageFormatInterpolation();
-    switch(lang_fixed) {
-        default:
-        case 'en':
-        $translateProvider.preferredLanguage('en_US');
-        break;
-        case 'es':
-        $translateProvider.preferredLanguage('es_MX');
-        break;
-    }
+    MessageFormat.locale["es"] = function () {};
+    MessageFormat.locale["en"] = function () {};
+
+    $translateProvider.determinePreferredLanguage(function () {
+        var lang = navigator.language || navigator.userLanguage;
+        var preferredLangKey = lang.match(/([a-z]+)/gi)[0];
+        return preferredLangKey;
+    });
+
+    //$translateProvider.determinePreferredLanguage();
 
     $translateProvider.useSanitizeValueStrategy('escaped');
 
-    $translateProvider.translations('es_MX', {
+    $translateProvider.translations('es', {
         home: 'Inicio',
         about: 'Acerca de',
         projects: 'Proyectos',
@@ -96,10 +92,11 @@ angular.module('translations').config(function($translateProvider) {
         Pippal: 'Pippal',
         pippal_subtitle: 'Plataforma educativa',
         pippal_message: 'Contribuí con el diseño de la base de datos, así como escribiendo el código del lado del servidor.',
-        my_repositories: 'Mis repositorios'
+        my_repositories: 'Mis repositorios',
+        language: 'Lenguaje'
     });
 
-    $translateProvider.translations('en_US', {
+    $translateProvider.translations('en', {
         home: 'Home',
         about: 'About',
         projects: 'Projects',
@@ -175,6 +172,14 @@ angular.module('translations').config(function($translateProvider) {
         Pippal: 'Pippal',
         pippal_subtitle: 'Education platform',
         pippal_message: 'I contributed with the database design, as well as writing the server side code.',
-        my_repositories: 'My repositories'
+        my_repositories: 'My repositories',
+        language: 'Language'
     });
+});
+
+angular.module('translations').controller('Languages', function($scope, $translate){
+    $scope.translate = function(lang)
+    {
+         $translate.use(lang);
+    };
 });
