@@ -97,7 +97,8 @@ module.exports = function (grunt) {
           {src: ['extras/**'], dest: 'dist/'},
           {src: ['bower_components/font-awesome/fonts/**'], dest: 'dist/',filter:'isFile',expand:true},
           {src: ['bower_components/font-awesome/less/**'], dest: 'dist/',filter:'isFile',expand:true},
-          {src: ['bower_components/bootstrap/less/**'], dest: 'dist/',filter:'isFile',expand:true}
+          {src: ['bower_components/bootstrap/less/**'], dest: 'dist/',filter:'isFile',expand:true},
+          {src: ['bower_components/roboto-fontface/fonts/**'], dest: 'dist/',filter:'isFile',expand:true}
           //{src: ['bower_components/angular-ui-utils/ui-utils-ieshiv.min.js'], dest: 'dist/'},
           //{src: ['bower_components/select2/*.png','bower_components/select2/*.gif'], dest:'dist/css/',flatten:true,expand:true},
           //{src: ['bower_components/angular-mocks/angular-mocks.js'], dest: 'dist/'},

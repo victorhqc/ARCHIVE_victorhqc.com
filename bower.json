@@ -33,6 +33,7 @@
     "ngInfiniteScroll": "1.0.0",
     "angular-loading-bar": "~0.7.1",
     "angular-chosen-localytics": "~1.0.7",
-    "js-md5": ""
+    "js-md5": "",
+    "roboto-fontface": "~0.4.3"
   }
 }
