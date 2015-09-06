@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="victorhqc">
+<head>
+  <title>Victor Q | WebApps & Webpages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="app.less" type="text/css" rel="stylesheet/less">
+</head>
+<body>
+
+  <!-- Livereload script for development only (stripped during dist build) -->
+  <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+  <!-- JS from Bower Components -->
+  <script src="bower_components/less.js/dist/less-1.6.2.js" data-concat="false"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+  <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+  <script src="bower_components/messageformat/messageformat.js"></script>
+  <script src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.min.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular-moment/angular-moment.js"></script>
+  <script src="bower_components/Chart.js/Chart.min.js"></script>
+  <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+  <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+  <script src="bower_components/angular-chosen-localytics/chosen.js"></script>
+  <script src="bower_components/js-md5/js/md5.min.js"></script>
+  <!-- Add New Bower Component JS Above -->
+
+
+  <!-- Main App JS -->
+  <script src="app.js"></script>
+  <script src="directive/menu/menu.js"></script>
+  <script src="partial/home/home.js"></script>
+  <script src="partial/about/about.js"></script>
+  <script src="service/resources.js"></script>
+  <script src="service/authInterceptor.js"></script>
+  <script src="translations/translations.js"></script>
+  <script src="partial/projojects/projojects.js"></script>
+  <script src="partial/projects/projects.js"></script>
+  <script src="service/pararallaxImages.js"></script>
+  <!-- Add New Component JS Above -->
+  <menu></menu>
+  <div>
+    <div id="content">
+        <div ng-view>
+        </div>
+    </div>
+  </div>
+  <footer id="footer" ng-cloak>
+      <div class="row">
+          <div class="footer-feature col-sm-4 col-md-3 col-lg-2">
+              <h3><a href="">Victorhqc</a></h3>
+          </div>
+          <div class="footer-feature col-sm-4 col-md-4 col-lg-4">
+              <p ng-cloak>
+                  <span ng-cloak>{{'legal' | translate}}</span>
+                  <a href="#/legal" ng-cloak>{{'legal_2' | translate}}</a>
+              </p>
+              <p ng-cloak>
+                  <span ng-cloak>{{'legal_3' | translate}}</span>
+                  <a href="http://github.com" target="_blank">Github</a>
+                  <span ng-cloak>{{'legal_5' | translate}}</span>
+                  <a href="http://www.w3.org/html/logo/" target="_blank">W3C</a>
+              </p>
+          </div>
+
+          <div class="footer-feature col-sm-4 col-md-2 col-lg-2">
+              <p>
+                  <a href="http://github.com/victorhqc" target="_blank">Github</a>
+              </p>
+              <p>
+                  <a href="http://facebook.com/victorhqc" target="_blank">Facebook</a>
+              </p>
+              <p>
+                  <a href="https://plus.google.com/111645890272031130235" target="_blank">Google +</a>
+              </p>
+          </div>
+
+          <div class="footer-feature col-sm-4 col-md-4 col-lg-4" ng-controller="Languages">
+            <h4 ng-cloak>{{'language' | translate}}</h4>
+            <p><a ng-click="translate('en');">English</a></p>
+            <p><a ng-click="translate('es');">Español</a></p>
+          </div>
+      </div>
+  </footer>
+
+</body>
+</html>
