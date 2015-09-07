@@ -25,14 +25,14 @@ angular.module('victorhqc').controller('AboutCtrl',function($scope, $timeout, pa
             title: 'skill_backend',
             subtitle: 'skill_backend_subtitle',
             messages: ['skill_backend_message'],
-            features: ['restful', 'websockets', 'laravel', 'skill_backend_oauth2'],
+            features: ['restful', 'websockets', 'laravel', 'skill_backend_oauth2', 'mean', 'loopback'],
             image: 'img/screens/php-sublime.jpg'
         },
         {
             title: 'skill_frontend',
             subtitle: 'skill_frontend_subtitle',
             messages: ['skill_frontend_message'],
-            features: ['angularjs', 'grunt', 'html5'],
+            features: ['angularjs', 'gulp', 'grunt', 'html5'],
             image: 'img/screens/js-sublime.jpg'
         },
         {

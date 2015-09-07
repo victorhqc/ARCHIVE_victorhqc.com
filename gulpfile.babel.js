@@ -177,7 +177,12 @@ gulp.task('serve', ['styles'], () => {
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['app/partial/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['app/partial/**/*'], reload);
+  gulp.watch(['app/translations/**/*'], reload);
+  gulp.watch(['app/service/**/*'], reload);
+  gulp.watch(['app/directive/**/*'], reload);
 });
 
 // Build and serve the output from the dist build
