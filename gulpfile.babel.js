@@ -38,7 +38,7 @@ const reload = browserSync.reload;
 
 // Lint JavaScript
 gulp.task('jshint', () =>
-  gulp.src('app/scripts/**/*.js')
+  gulp.src('app/**/**/*.js')
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -47,12 +47,12 @@ gulp.task('jshint', () =>
 
 // Optimize images
 gulp.task('images', () =>
-  gulp.src('app/images/**/*')
+  gulp.src('app/img/**/*')
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
     })))
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('dist/img'))
     .pipe($.size({title: 'images'}))
 );
 
@@ -91,17 +91,17 @@ gulp.task('styles', () => {
 
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    'app/styles/**/*.scss',
-    'app/styles/**/*.css'
+    'app/*.scss',
+    'app/*.css'
   ])
-    .pipe($.newer({dest: '.tmp/styles', ext: '.css'}))
+    .pipe($.newer({dest: 'app/.tmp/styles', ext: '.css'}))
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       precision: 10
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('.tmp/styles'))
+    .pipe(gulp.dest('app/.tmp/styles'))
     // Concatenate and minify styles
     .pipe($.if('*.css', $.minifyCss()))
     .pipe($.sourcemaps.write('.'))
@@ -115,19 +115,27 @@ gulp.task('scripts', () =>
     // Note: Since we are not using useref in the scripts build pipeline,
     //       you need to explicitly list your scripts here in the right order
     //       to be correctly concatenated
-    './app/scripts/main.js'
+    './app/app.js',
+    './app/directive/menu.js',
+    './app/partial/about/about.js',
+    './app/partial/home/home.js',
+    './app/partial/projects/projects.js',
+    './app/partial/translations/translations.js',
+    './app/partial/service/authInterceptor.js',
+    './app/partial/service/parallaxImages.js',
+    './app/partial/service/resources.js',
     // Other scripts
   ])
-    .pipe($.concat('main.min.js'))
+    .pipe($.concat('app.min.js'))
     .pipe($.uglify({preserveComments: 'some'}))
     // Output files
-    .pipe(gulp.dest('dist/scripts'))
+    .pipe(gulp.dest('dist/'))
     .pipe($.size({title: 'scripts'}))
 );
 
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
-  const assets = $.useref.assets({searchPath: '{.tmp,app}'});
+  const assets = $.useref.assets({searchPath: '{app/.tmp,app}'});
 
   return gulp.src('app/**/*.html')
     .pipe(assets)
@@ -159,7 +167,7 @@ gulp.task('html', () => {
 });
 
 // Clean output directory
-gulp.task('clean', cb => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}, cb));
+gulp.task('clean', cb => del(['app/.tmp', 'dist/*', '!dist/.git'], {dot: true}, cb));
 
 // Watch files for changes & reload
 gulp.task('serve', ['styles'], () => {
@@ -171,18 +179,19 @@ gulp.task('serve', ['styles'], () => {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: ['.tmp', 'app']
+    server: ['app/.tmp', 'app']
   });
 
   gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
-  gulp.watch(['app/partial/**/*.js'], ['jshint']);
-  gulp.watch(['app/images/**/*'], reload);
-  gulp.watch(['app/partial/**/*'], reload);
-  gulp.watch(['app/translations/**/*'], reload);
-  gulp.watch(['app/service/**/*'], reload);
-  gulp.watch(['app/directive/**/*'], reload);
+  gulp.watch(['app/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['app/**/*.js'], reload);
+  gulp.watch(['app/partial/**/*.js'], ['jshint', reload]);
+  gulp.watch(['app/directive/**/*.js'], ['jshint', reload]);
+  gulp.watch(['app/service/**/*.js'], ['jshint', reload]);
+  gulp.watch(['app/img/**/*'], reload);
+  gulp.watch(['app/partial/**/*.html'], reload);
+  gulp.watch(['app/directive/**/*.html'], reload);
+  gulp.watch(['app/service/**/*.html'], reload);
 });
 
 // Build and serve the output from the dist build
@@ -234,10 +243,12 @@ gulp.task('generate-service-worker', cb => {
     staticFileGlobs: [
       // Add/remove glob patterns to match your directory setup.
       `${rootDir}/fonts/**/*.woff`,
-      `${rootDir}/images/**/*`,
-      `${rootDir}/scripts/**/*.js`,
-      `${rootDir}/styles/**/*.css`,
-      `${rootDir}/*.{html,json}`
+      `${rootDir}/img/**/*`,
+      `${rootDir}/directive/**/*.{js,json,css,html}`,
+      `${rootDir}/partial/**/*.{js,json,css,html}`,
+      `${rootDir}/service/**/*.{js,json,css,html}`,
+      `${rootDir}/translation/**/*.{js,json,css,html}`,
+      `${rootDir}/*.{html,json,css,js}`
     ],
     // Translates a static file path to the relative URL that it's served from.
     stripPrefix: path.join(rootDir, path.sep)
