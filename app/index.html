@@ -4,17 +4,14 @@
   <title>Victor Q | WebApps & Webpages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="bower_components/roboto-fontface/css/roboto-fontface.css">
-  <link href=".tmp/styles/app.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/roboto-fontface.css">
+  <link href="styles/app.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Livereload script for development only (stripped during dist build) -->
-  <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
-
-  <!-- JS from Bower Components -->
+  <!-- build:js scripts/main.bower.min.js -->
   <script src="bower_components/less.js/dist/less-1.6.2.js" data-concat="false"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -36,20 +33,20 @@
   <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
   <script src="bower_components/angular-chosen-localytics/chosen.js"></script>
   <script src="bower_components/js-md5/js/md5.min.js"></script>
-  <!-- Add New Bower Component JS Above -->
+  <!-- endbuild -->
 
 
-  <!-- Main App JS -->
+  <!-- build:js scripts/app.min.js -->
   <script src="app.js"></script>
   <script src="directive/menu/menu.js"></script>
   <script src="partial/home/home.js"></script>
   <script src="partial/about/about.js"></script>
+  <script src="partial/projects/projects.js"></script>
   <script src="service/resources.js"></script>
   <script src="service/authInterceptor.js"></script>
-  <script src="translations/translations.js"></script>
-  <script src="partial/projects/projects.js"></script>
   <script src="service/pararallaxImages.js"></script>
-  <!-- Add New Component JS Above -->
+  <script src="translations/translations.js"></script>
+  <!-- endbuild -->
   <menu></menu>
   <div>
     <div id="content">

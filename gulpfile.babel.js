@@ -38,7 +38,11 @@ const reload = browserSync.reload;
 
 // Lint JavaScript
 gulp.task('jshint', () =>
-  gulp.src('app/**/**/*.js')
+  gulp.src([
+      'app/**/**/*.js',
+      '!app/bower_components/**/**/*.js',
+      '!dist/bower_components/**/**/*.js',
+      '!app/**/**/*.min.js'])
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -61,6 +65,7 @@ gulp.task('copy', () =>
   gulp.src([
     'app/*',
     '!app/*.html',
+    '!app/bower_components/*',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
@@ -70,7 +75,7 @@ gulp.task('copy', () =>
 
 // Copy web fonts to dist
 gulp.task('fonts', () =>
-  gulp.src(['app/fonts/**'])
+  gulp.src(['app/fonts/**', 'app/bower_components/roboto-fontface/fonts/**'])
     .pipe(gulp.dest('dist/fonts'))
     .pipe($.size({title: 'fonts'}))
 );
@@ -92,7 +97,10 @@ gulp.task('styles', () => {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
     'app/*.scss',
-    'app/*.css'
+    'app/*.css',
+    'app/bower_components/bootstrap/dist/css/bootstrap.min.css',
+    'app/bower_components/font-awesome/css/font-awesome.min.css',
+    'app/bower_components/roboto-fontface/css/roboto-fontface.css'
   ])
     .pipe($.newer({dest: 'app/.tmp/styles', ext: '.css'}))
     .pipe($.sourcemaps.init())
@@ -101,7 +109,7 @@ gulp.task('styles', () => {
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('app/.tmp/styles'))
+    .pipe(gulp.dest('app/styles'))
     // Concatenate and minify styles
     .pipe($.if('*.css', $.minifyCss()))
     .pipe($.sourcemaps.write('.'))
@@ -137,7 +145,12 @@ gulp.task('scripts', () =>
 gulp.task('html', () => {
   const assets = $.useref.assets({searchPath: '{app/.tmp,app}'});
 
-  return gulp.src('app/**/*.html')
+  const props = {
+      empty: true,
+      quotes: true
+  };
+
+  return gulp.src(['app/**/*.html', '!app/bower_components/**'])
     .pipe(assets)
     // Remove any unused CSS
     // Note: If not using the Style Guide, you can delete it from
@@ -160,7 +173,7 @@ gulp.task('html', () => {
     .pipe($.useref())
 
     // Minify any HTML
-    .pipe($.if('*.html', $.minifyHtml()))
+    .pipe($.if('*.html', $.minifyHtml(props)))
     // Output files
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));
