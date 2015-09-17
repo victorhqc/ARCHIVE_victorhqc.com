@@ -11,7 +11,10 @@
     <div id="main-menu-container" class="collapse navbar-collapse navbar-ex6-collapse">
         <ul id="main-menu" class="nav navbar-nav">
             <li class="{{category == c.name ? 'active': ''}}" ng-repeat="c in categories">
-                    <a href="/#/{{c.name}}">
+                    <a ng-if="c.href" href="{{c.href}}">
+                        {{c.name | translate}}
+                    </a>
+                    <a ng-if="!c.href" href="/#/{{c.name}}">
                         {{c.name | translate}}
                     </a>
                 </li>

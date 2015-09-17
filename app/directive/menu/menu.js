@@ -18,7 +18,8 @@ angular.module('victorhqc').directive('menu', function($route, $translate, $time
             scope.categories = [
                 {name: 'home'},
                 {name: 'projects'},
-                {name: 'about'}
+                {name: 'about'},
+                {name: 'blog', href: '//blog.victorhqc.com'}
             ];
 
             routeChange();
